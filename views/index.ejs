@@ -1,0 +1,15 @@
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>fgdfg</title>
+</head>
+
+<div class="category-container">
+    <%categories.forEach(x=>{ %>
+        <%- include("partials/category", {category:x})%>
+   <% })%>
+        <form action="/category/create" method="get">
+            <button>Add Category</button>
+
+        </form>
+
+</div>
