@@ -1,10 +1,18 @@
 const query = require('../db/queries')
 
 
+let value = false
+
+function setValue(req,res){
+    value = !value
+    res.redirect("/")
+}
+
+
 async function getAllCategories(req,res) {
     const limit = req.query.limit === undefined ? "":req.query.limit
     const categories = await query.getAllCategories(limit)
-    res.render('index',{categories:categories})
+    res.render('index',{categories:categories,testValue:value})
 }
 
 async function createCategoryGet(req,res){
@@ -26,5 +34,6 @@ module.exports = {
     getAllCategories,
     createCategoryPost,
     createCategoryGet,
-    deleteCategoryPost
+    deleteCategoryPost,
+    setValue
 }

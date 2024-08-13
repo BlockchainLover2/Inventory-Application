@@ -23,6 +23,8 @@ categoryRouter.post("/:name/:itemId/delete",itemController.deleteItemPost)
 
 categoryRouter.post("/:name/delete",categoryController.deleteCategoryPost)
 
+categoryRouter.post("/setValue",categoryController.setValue)
+
 
 
 
